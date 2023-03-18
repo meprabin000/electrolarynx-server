@@ -1,0 +1,8 @@
+{
+    "exec": "npm run build",
+    "ext": "ts",
+    "runOnChanges": true,
+    "watch": [
+        "./src"
+    ]
+}

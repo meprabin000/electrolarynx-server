@@ -1,15 +1,16 @@
-import express from "express";
+import express from 'express';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
+const host = process.env.HOST;
 
-app.get("/", (req, res) => {
-    res.send("You are listening from express server");
+app.get('/', (req, res) => {
+  res.send('Express + TypeScript Server');
 });
 
-app.listen(port, (err?) => {
-    if (err) {
-        return console.error(err);
-    } 
-    return console.log(`server is listening on ${port}`);
+app.listen(port, () => {
+  console.log(`[server]: Server is running at http://${host}:${port}`);
 });
